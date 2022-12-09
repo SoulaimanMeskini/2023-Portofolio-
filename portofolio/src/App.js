@@ -11,7 +11,8 @@ import NoPage from './pages/NoPage.js';
 
 function App() {
     return ( 
-        <BrowserRouter>
+     
+        <Menu>
           <Routes>
             <Route path='/' element={<Menu/>}>
               <Route index element={<Home/>}/>
@@ -22,7 +23,7 @@ function App() {
               <Route path="*" element={<NoPage/>}/>
             </Route>
           </Routes>
-        </BrowserRouter>
+        </Menu>
     );
 }
 
