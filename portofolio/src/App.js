@@ -1,7 +1,8 @@
 import './App.css';
 import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Menu from './components/Menu.js';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HeaderComponent } from './components/Header.js';
+import { FooterComponent } from './components/Footer.js';
 import Home from './pages/Home.js';
 import Lookbook from './pages/Lookbook.js';
 import AboutMe from './pages/AboutMe.js';
@@ -11,19 +12,19 @@ import NoPage from './pages/NoPage.js';
 
 function App() {
     return ( 
-     
-        <Menu>
-          <Routes>
-            <Route path='/' element={<Menu/>}>
-              <Route index element={<Home/>}/>
-              <Route path='lookbook' element={<Lookbook/>}/>
-              <Route path='aboutme' element={<AboutMe/>}/>
-              <Route path='projects' element={<Projects/>}/>
-              <Route path='contact' element={<Contact/>}/>
-              <Route path="*" element={<NoPage/>}/>
-            </Route>
-          </Routes>
-        </Menu>
+          <Router>
+            <HeaderComponent/>
+            <Routes>
+              <Route path="/" element={Home } />
+              <Route path="/Lookbook" element={Lookbook } />
+              <Route path="/Projects" element={AboutMe } />
+              <Route path="/AboutMe" element={Projects } />
+              <Route path="/Contact" element={Contact } />
+              <Route path="*" element={NoPage } />
+            </Routes>
+            <FooterComponent/>
+          </Router>
+        
     );
 }
 
