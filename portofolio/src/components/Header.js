@@ -1,8 +1,8 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link as RouterLink} from "react-router-dom";
 import styled from 'styled-components';
 import React, { useState } from 'react';
 
-import LogoWhite from '../assets/pictures/sm_logo_black.svg'
+import CustomLogo from "./Svg/CustomLogo";
 
 
 export const HeaderComponent = () => {
@@ -13,7 +13,9 @@ export const HeaderComponent = () => {
     <>
         <Header>
             <LogoWrapper >
-                   <img id="LogoChanger" src={LogoWhite} link to="/"/> 
+                <Link to="/">
+                    <CustomLogo ></CustomLogo>
+                </Link>
             </LogoWrapper>
             <Fill />
                 <HeaderBubble id="MenuChanger" open={MenuOpen} onClick={(e) => SetMenuOpen(!MenuOpen)}>
@@ -21,19 +23,13 @@ export const HeaderComponent = () => {
                         <nav>
                             <ul>
                                 <li>
-                                    <Link to="/">Home</Link>
+                                    <Link to="/projects" className="link" >Projects</Link>
                                 </li>
                                 <li>
-                                    <Link to="/projects">Projects</Link>
+                                    <Link to="/lookbook" className="link" >Lookbook</Link>
                                 </li>
                                 <li>
-                                    <Link to="/lookbook">Lookbook</Link>
-                                </li>
-                                <li>
-                                    <Link to="/Aboutme">Aboutme</Link>
-                                </li>
-                                <li>
-                                    <Link to="/contact">Contact</Link>
+                                    <Link to="/aboutme" className="link" >Aboutme</Link>
                                 </li>
                             </ul>
                         </nav>
@@ -46,6 +42,13 @@ export const HeaderComponent = () => {
     </>
     );
 }
+
+const Link = styled(RouterLink)`
+  color: red;
+  &:hover {
+    color: blue;
+  }
+`;
 
 const Header = styled.div`
     position: absolute;
@@ -70,14 +73,12 @@ const Fill = styled.div`
 `;
 
 
-
-
 const HeaderBubble = styled.div`
     height: 50px;
     border-radius: 50px;
     width: ${({ open }) => open ? 300:50}px;
     padding: ${({ open })=> open ? '0px 20px' : '0px'};
-    cursor: ${({ open }) => open ? 'default' : 'cursor'};
+    /* cursor: ${({ open }) => open ? 'default' : 'cursor'}; */
     background-color: #EEEEEE;
     display: flex;
     flex-direction: row;
@@ -90,18 +91,28 @@ const HeaderBubble = styled.div`
         ${({open}) => open ? '' : '&:hover {background-color: #C4C4C4;'}
 	}
 
-    a {
+    ul {
+        display: flex;
+        align-content: center;
+        list-style-type: none;
+        width: 100%;
         cursor: pointer;
         text-decoration: none;
         border-radius: 5px;
         white-space: nowrap;
-        animation: menu-fade .8s;
+        animation: menu-fade 1.2s;
+        
         &:hover {
-            color: #6F02C6;
+            color: black !important;
         }
 
     }
     
+    li{
+        padding: 7px; 
+    }
+
+
     transition: width .2s ease-in-out;
 
     @keyframes menu-fade {
@@ -116,15 +127,18 @@ const HeaderBubble = styled.div`
 
 const LogoWrapper = styled.div`
 
-    img{
-        background-position: center;
+    svg{
+        align-content: center;
         background-size: cover;
         transition: 0.6s;
         width: 150px;
         height: 100%;
         margin: 10px;
         cursor: pointer;
-    }
+
+
+	}
+    
 `;
 
 const HiddenItem = styled.div`

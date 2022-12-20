@@ -9,23 +9,30 @@ export const FooterComponent = () => {
 
     return (
     <>
-        <div>Footer</div>
+       <Footer>
+            <p>This is the footer.</p>
+       </Footer>
     </>
     );
 }
 
-const HeaderBubble = styled.div`
+const Footer = styled.div`
 
-    height: 50px;
-    border-radius: 50px;
-    width:  50px;
-    background-color: #EEEEEE;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    color: #101010
-       
+position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  
+  p {
+    &:hover{
+        color: purple;
+        cursor: default;
+    }
+  }
+  
 `;
 
 export default FooterComponent;
