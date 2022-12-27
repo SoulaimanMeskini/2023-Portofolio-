@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const CustomLogo = () => {
-        const [color, setColor] = useState('black');
+        const [color, setColor] = useState('rgba(238, 238, 238, 1)');
       
         const handleMouseEnter = () => {
-          setColor('purple');
+          setColor('rgb(111, 2, 198)');
         };
       
         const handleMouseLeave = () => {
-          setColor('black');
+          setColor('rgba(238, 238, 238, 1)');
         };
    
     return(
-
+      <Link to="/">
         <svg onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} version="1.0" xmlns="http://www.w3.org/2000/svg"
-            width="1184.000000pt" height="548.000000pt" viewBox="0 0 1184.000000 548.000000"
-            preserveAspectRatio="xMidYMid meet">
+              width="1184.000000pt" height="548.000000pt" viewBox="0 0 1184.000000 548.000000"
+              preserveAspectRatio="xMidYMid meet">
 
             <g transform="translate(0.000000,548.000000) scale(0.100000,-0.100000)"
                 fill={color}>
@@ -45,6 +46,7 @@ const CustomLogo = () => {
                 -7 6 182 466 191 466 6 0 515 -118 1130 -262z"/>
             </g>
         </svg>
+      </Link>
     )
 }
 

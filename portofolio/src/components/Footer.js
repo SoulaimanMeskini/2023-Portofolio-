@@ -19,6 +19,7 @@ export const FooterComponent = () => {
 const Footer = styled.div`
 
 position: fixed;
+  z-index: 21;
   left: 0;
   bottom: 0;
   width: 100%;

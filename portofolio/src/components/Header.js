@@ -13,9 +13,7 @@ export const HeaderComponent = () => {
     <>
         <Header>
             <LogoWrapper >
-                <Link to="/">
                     <CustomLogo ></CustomLogo>
-                </Link>
             </LogoWrapper>
             <Fill />
                 <HeaderBubble id="MenuChanger" open={MenuOpen} onClick={(e) => SetMenuOpen(!MenuOpen)}>
@@ -29,7 +27,7 @@ export const HeaderComponent = () => {
                                     <Link to="/lookbook" className="link" >Lookbook</Link>
                                 </li>
                                 <li>
-                                    <Link to="/aboutme" className="link" >Aboutme</Link>
+                                    <Link to="/aboutme" className="link" >AboutMe</Link>
                                 </li>
                             </ul>
                         </nav>
@@ -44,10 +42,30 @@ export const HeaderComponent = () => {
 }
 
 const Link = styled(RouterLink)`
-  color: red;
-  &:hover {
-    color: blue;
-  }
+    color: rgba(20, 20, 20, 1);
+    position: relative;
+    text-decoration: none;
+
+    &:before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        border-radius: 4px;
+        background-color: rgba(111, 2, 198, 1);
+        bottom: 0;
+        left: 0;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform .3s ease-in-out; 
+    }
+    
+    &:hover::before {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+   
+
 `;
 
 const Header = styled.div`
@@ -78,7 +96,7 @@ const HeaderBubble = styled.div`
     border-radius: 50px;
     width: ${({ open }) => open ? 300:50}px;
     padding: ${({ open })=> open ? '0px 20px' : '0px'};
-    /* cursor: ${({ open }) => open ? 'default' : 'cursor'}; */
+    cursor: ${({ open }) => open ? 'default' : 'cursor'};
     background-color: #EEEEEE;
     display: flex;
     flex-direction: row;
