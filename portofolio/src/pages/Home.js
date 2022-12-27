@@ -1,7 +1,27 @@
 import React from 'react';
+import styled from 'styled-components';
 
-function Home(){
-    return <h1>Home</h1>;
-};
+import { CircleLensComponent } from '../components/CircleLens';
 
-export default Home;
+
+export const HomeComponent = () => {
+
+
+    return (
+    <>
+        <home>
+            <CircleLensComponent>
+            </CircleLensComponent>
+        </home>
+    </>
+    );
+}
+
+const Home = styled.div`
+
+    p{
+        color: whitesmoke;
+    }
+`;
+
+export default HomeComponent;
