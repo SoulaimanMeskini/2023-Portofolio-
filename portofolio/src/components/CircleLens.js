@@ -7,16 +7,28 @@ export const CircleLensComponent = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isDisabled, setIsDisabled] = useState(false);
   const [stopAnimation, setStopAnimation] = useState(false);
+  const [videochanger,  setVideochanger] = useState(false);
+
+  const handleClick = () => {
+    // set the loopchange prop to true here
+    setVideochanger(true);
+  }
+
 
   return (
     <>
-      <VideoLoopComponent />
+      {videochanger
+      ?<VideoLoopComponent loopchange={videochanger} />
+      :<VideoLoopComponent loopchange={videochanger} />
+      }
       <Section>
         <OpenupCircle
           onClick={() => {
             if (!isDisabled) {
               setIsExpanded(!isExpanded);
               setIsDisabled(true);
+              setVideochanger(true);
+              handleClick();
             }
           }}
           isExpanded={isExpanded}
@@ -36,20 +48,20 @@ export const CircleLensComponent = () => {
   );
 };
 
-  {
-    const VideoLoop = styled.div`
-       position: absolute;
-       top: 0;
-       left: 0;
-       width: 100vw;
-       height: 100vh;
-      video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    `;
-  }
+  // {
+  //   const VideoLoop = styled.div`
+  //      position: absolute;
+  //      top: 0;
+  //      left: 0;
+  //      width: 100vw;
+  //      height: 100vh;
+  //     video {
+  //       width: 100%;
+  //       height: 100%;
+  //       object-fit: cover;
+  //     }
+  //   `;
+  // }
 
 const Section = styled.section`
   position: absolute;
