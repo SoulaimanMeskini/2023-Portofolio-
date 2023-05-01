@@ -1,5 +1,5 @@
-import './App.css';
 import React from 'react';
+<<<<<<< Updated upstream
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Menu from './components/Menu.js';
 import Home from './pages/Home.js';
@@ -27,3 +27,23 @@ function App() {
 }
 
 export default App;
+=======
+
+import { HeaderComponent } from './components/Header.js';
+
+import { RootRouter } from './Router/Router.js';
+import { BrowserRouter } from 'react-router-dom';
+
+function App() {
+	return (
+		<>
+			<BrowserRouter>
+				<RootRouter />
+				<HeaderComponent />
+			</BrowserRouter>
+		</>
+	);
+}
+
+export default App;
+>>>>>>> Stashed changes
