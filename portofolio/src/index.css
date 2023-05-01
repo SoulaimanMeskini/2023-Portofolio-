@@ -1,18 +1,3 @@
-<<<<<<< Updated upstream
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-=======
 /* colors
 white - rgba(238,238,238 1) #EEEEEE
 black - rgba(20,20,20 1)    #101010
@@ -21,46 +6,47 @@ purple - rgb(111, 2, 198)   #6F02C6
 */
 
 * {
-	-webkit-user-select: none;
-	-webkit-user-drag: none;
-	-webkit-app-region: no-drag;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-app-region: no-drag;
 }
 
 html,
 body {
-	height: 100%;
-	background-color: #101010;
-	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  background-color: #101010;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
-	height: 100%;
-	overflow-y: auto;
-	overflow-x: hidden;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 #root::-webkit-scrollbar {
-	width: 16px;
-	z-index: 9999;
-	margin: 20px;
+  width: 16px;
+  z-index: 9999;
+  margin: 20px;
 }
 
 #root::-webkit-scrollbar-button {
-	height: 80px;
+  height: 80px;
 }
 
 #root::-webkit-scrollbar-track {
-	background-color: #cccccc;
-	border-radius: 100px;
-	margin-top: 10px;
-	margin-bottom: 10px;
+  background-color: #cccccc;
+  border-radius: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #root::-webkit-scrollbar-thumb {
-	background-color: #ee6363;
-	border-radius: 100px;
+  background-color: #ee6363;
+  border-radius: 100px;
 }
->>>>>>> Stashed changes

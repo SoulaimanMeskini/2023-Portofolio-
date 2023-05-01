@@ -1,27 +1,22 @@
-import React from 'react';
+import React from "react";
+import styled from "styled-components";
 
-function Home(){
-    return <h1>Home</h1>;
-};
+import CircleLensComponent from "../components/CircleLens";
 
-<<<<<<< Updated upstream
-export default Home;
-=======
 export const HomeComponent = () => {
-	return (
-		<>
-			<Home>
-				<CircleLensComponent></CircleLensComponent>
-			</Home>
-		</>
-	);
+  return (
+    <>
+      <Home>
+        <CircleLensComponent></CircleLensComponent>
+      </Home>
+    </>
+  );
 };
 
 const Home = styled.div`
-	p {
-		color: whitesmoke;
-	}
+  p {
+    color: whitesmoke;
+  }
 `;
 
 export default HomeComponent;
->>>>>>> Stashed changes
