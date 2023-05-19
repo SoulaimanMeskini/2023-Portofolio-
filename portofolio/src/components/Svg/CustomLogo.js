@@ -1,28 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CustomLogo = () => {
-        const [color, setColor] = useState('rgba(238, 238, 238, 1)');
-      
-        const handleClick = () => {
-          setColor('#ff0000');
-       }
+  const [color, setColor] = useState("rgba(238, 238, 238, 1)");
 
-        const handleMouseEnter = () => {
-          setColor('rgb(111, 2, 198)');
-        };
-      
-        const handleMouseLeave = () => {
-          setColor('rgba(238, 238, 238, 1)');
-        };
-   
-    return(
-        <svg id="SVGchanger" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} version="1.0" xmlns="http://www.w3.org/2000/svg"
-              width="1184.000000pt" height="548.000000pt" viewBox="0 0 1184.000000 548.000000"
-              preserveAspectRatio="xMidYMid meet" >
+  const handleClick = () => {
+    setColor("#ff0000");
+  };
 
-            <g transform="translate(0.000000,548.000000) scale(0.100000,-0.100000)"
-                fill={color}>
-                <path d="M6821 5099 c-6 -13 -106 -265 -222 -559 -116 -294 -214 -539 -218
+  const handleMouseEnter = () => {
+    setColor("rgb(111, 2, 198)");
+  };
+
+  const handleMouseLeave = () => {
+    setColor("rgba(238, 238, 238, 1)");
+  };
+
+  const navigate = useNavigate();
+
+  return (
+    <svg
+      id="SVGchanger"
+      onClick={() => navigate("/")}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      version="1.0"
+      xmlns="http://www.w3.org/2000/svg"
+      width="1184.000000pt"
+      height="548.000000pt"
+      viewBox="0 0 1184.000000 548.000000"
+      preserveAspectRatio="xMidYMid meet"
+    >
+      <g
+        transform="translate(0.000000,548.000000) scale(0.100000,-0.100000)"
+        fill={color}
+      >
+        <path
+          d="M6821 5099 c-6 -13 -106 -265 -222 -559 -116 -294 -214 -539 -218
                 -543 -5 -5 -1201 24 -2659 63 -1458 39 -2682 70 -2720 68 -63 -3 151 -55 2445
                 -593 1383 -324 2515 -591 2517 -592 2 -2 -41 -115 -94 -251 l-98 -247 -58 -3
                 c-33 -1 -963 22 -2069 52 l-2010 54 -640 -39 c-352 -21 -658 -38 -679 -39 -22
@@ -45,10 +59,11 @@ const CustomLogo = () => {
                 -158 -350 -29 5 -3428 802 -3439 806 -22 9 240 3 1948 -43z m3651 -99 l159 -7
                 -192 -210 c-105 -115 -194 -211 -199 -213 -8 -2 -272 420 -272 435 0 9 200 7
                 504 -5z m-900 -1134 c616 -145 1111 -265 1102 -266 -17 -4 -2419 58 -2423 62
-                -7 6 182 466 191 466 6 0 515 -118 1130 -262z"/>
-            </g>
-        </svg>
-    )
-}
+                -7 6 182 466 191 466 6 0 515 -118 1130 -262z"
+        />
+      </g>
+    </svg>
+  );
+};
 
-export default CustomLogo
+export default CustomLogo;

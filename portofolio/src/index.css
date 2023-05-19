@@ -9,6 +9,8 @@ purple - rgb(111, 2, 198)   #6F02C6
   -webkit-user-select: none;
   -webkit-user-drag: none;
   -webkit-app-region: no-drag;
+  padding: 0;
+  margin: 0;
 }
 
 html,
@@ -33,20 +35,21 @@ body {
   width: 16px;
   z-index: 9999;
   margin: 20px;
+  position: fixed;
 }
 
 #root::-webkit-scrollbar-button {
-  height: 80px;
+  height: 50px;
 }
 
 #root::-webkit-scrollbar-track {
-  background-color: #cccccc;
+  background-color: #c4c4c4;
   border-radius: 100px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 #root::-webkit-scrollbar-thumb {
-  background-color: #ee6363;
+  background-color: #eeeeee;
   border-radius: 100px;
 }
