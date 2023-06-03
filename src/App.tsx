@@ -1,8 +1,8 @@
 import React from "react";
 
-import { HeaderComponent } from "./components/Header.js";
+import { HeaderComponent } from "./components/Header";
 
-import { RootRouter } from "./Router/Router.js";
+import { RootRouter } from "./Router/Router";
 import { BrowserRouter } from "react-router-dom";
 
 function App() {
