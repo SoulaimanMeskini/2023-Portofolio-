@@ -1,5 +1,3 @@
-import React from "react";
-
 import { HeaderComponent } from "./components/Header";
 
 import { RootRouter } from "./Router/Router";

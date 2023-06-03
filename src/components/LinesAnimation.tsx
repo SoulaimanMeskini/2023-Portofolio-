@@ -1,16 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Lines = () => {
-  
-  
-
-
-  return (
-    <LineContainer>
-    </LineContainer>
-  );
+  return <LineContainer></LineContainer>;
 };
 
-const LineContainer = styled.div`
-`;
+const LineContainer = styled.div``;

@@ -1,22 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import { useState } from "react";
+import styled from "styled-components";
 
-import { Lines } from './LinesAnimation';
-import { VideoLoop as VideoLoopComponent } from './VideoLoop';
+import { Lines } from "./LinesAnimation";
+import { VideoLoop as VideoLoopComponent } from "./VideoLoop";
 
 export const CircleLensComponent = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isDisabled, setIsDisabled] = useState(false);
   const [stopAnimation, setStopAnimation] = useState(false);
-  const [videochanger,  setVideochanger] = useState(false);
-  const [color, setColor] = useState("#000000");
+  const [videochanger, setVideochanger] = useState(false);
 
   const handleClick = () => {
     // set the loopchange prop to true here
     setVideochanger(true);
     let menuChanger = document.getElementById("MenuChanger"); // Changes Headerbubble color
-    menuChanger.setAttribute("style", newBackground);
-  }
+    menuChanger?.setAttribute("style", newBackground);
+  };
 
   const newBackground = `
         background-color: #101010;
@@ -26,10 +25,11 @@ export const CircleLensComponent = () => {
     <>
       <Lines></Lines>
       <VideoBackground>
-        {videochanger
-        ?<VideoLoopComponent loopchange={videochanger} />
-        :<VideoLoopComponent loopchange={videochanger} />
-        }
+        {videochanger ? (
+          <VideoLoopComponent loopchange={videochanger} />
+        ) : (
+          <VideoLoopComponent loopchange={videochanger} />
+        )}
       </VideoBackground>
       <Section>
         <OpenupCircle
@@ -66,8 +66,7 @@ const VideoBackground = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: aqua
-
+  background-color: aqua;
 `;
 
 const Section = styled.section`
@@ -85,7 +84,11 @@ const Section = styled.section`
   background-attachment: fixed;
 `;
 
-const OpenupCircle = styled.div`
+const OpenupCircle = styled.div<{
+  isExpanded: boolean;
+  stopAnimation: boolean;
+  disabled: boolean;
+}>`
   position: absolute;
   width: ${(props) => (props.isExpanded ? "200%" : "700px")};
   height: ${(props) => (props.isExpanded ? "200%" : "700px")};
@@ -94,9 +97,11 @@ const OpenupCircle = styled.div`
   box-shadow: -1px -1px 27px 8px rgba(0, 0, 0, 0.81) inset;
   -webkit-box-shadow: -1px -1px 27px 8px rgba(0, 0, 0, 0.81) inset;
   -moz-box-shadow: -1px -1px 27px 8px rgba(0, 0, 0, 0.81) inset;
-  transition: transform 0.5s ease-in-out, width 0.5s ease-in-out, height 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, width 0.5s ease-in-out,
+    height 0.5s ease-in-out;
   animation-name: ${(props) => (props.stopAnimation ? "none" : "pulse")};
-  animation-iteration-count: ${(props) => (props.stopAnimation ? "0" : "infinite")};
+  animation-iteration-count: ${(props) =>
+    props.stopAnimation ? "0" : "infinite"};
   animation-duration: 3s;
 
   @keyframes pulse {
@@ -112,7 +117,11 @@ const OpenupCircle = styled.div`
   }
 `;
 
-const InnerDiv = styled.div`
+const InnerDiv = styled.div<{
+  disabled: boolean;
+  stopAnimation: boolean;
+  isExpanded: boolean;
+}>`
   width: 100%;
   height: 100%;
   background-color: transparent;

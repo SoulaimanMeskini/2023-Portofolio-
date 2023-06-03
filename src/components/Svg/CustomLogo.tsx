@@ -1,12 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const CustomLogo = () => {
   const [color, setColor] = useState("rgba(238, 238, 238, 1)");
-
-  const handleClick = () => {
-    setColor("#ff0000");
-  };
 
   const handleMouseEnter = () => {
     setColor("rgb(111, 2, 198)");

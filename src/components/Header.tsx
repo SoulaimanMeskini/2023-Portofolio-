@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 import CustomLogo from "./Svg/CustomLogo";
@@ -9,9 +8,9 @@ export const HeaderComponent = () => {
     <>
       <Header>
         <LogoWrapper>
-          <CustomLogo></CustomLogo>
+          <CustomLogo />
         </LogoWrapper>
-        <HeaderbubbleComponent></HeaderbubbleComponent>
+        <HeaderbubbleComponent />
         <HiddenItem />
       </Header>
     </>
@@ -34,12 +33,6 @@ const Header = styled.div`
   align-content: space-between;
   align-items: center;
 `;
-
-const Fill = styled.div`
-  display: flex;
-  flex-grow: 1;
-`;
-
 const LogoWrapper = styled.div`
   svg {
     align-content: center;

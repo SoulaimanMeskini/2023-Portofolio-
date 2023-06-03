@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 export const HeaderbubbleComponent = () => {
   const [MenuOpen, SetMenuOpen] = useState(false); // Checks if Headerbubble is clicked then opens up
-  const [A, SetA] = useState(false);
   const navigate = useNavigate();
 
   return (
@@ -12,16 +11,16 @@ export const HeaderbubbleComponent = () => {
       <HeaderBubble
         id="MenuChanger"
         open={MenuOpen}
-        onClick={(e) => SetMenuOpen(!MenuOpen)}
+        onClick={() => SetMenuOpen(!MenuOpen)}
       >
         {MenuOpen === true && (
           <>
-            <nav>
-              <ul>
+            <div>
+              <ul style={{ padding: 0 }}>
                 <li>
                   <Text
                     id="TextChanger"
-                    to="/projects"
+                    // to="/projects"
                     className="link"
                     onClick={() => navigate("/projects")}
                   >
@@ -31,7 +30,7 @@ export const HeaderbubbleComponent = () => {
                 <li>
                   <Text
                     id="TextChanger"
-                    to="/lookbook"
+                    // to="/lookbook"
                     className="link"
                     onClick={() => navigate("/lookbook")}
                   >
@@ -41,7 +40,7 @@ export const HeaderbubbleComponent = () => {
                 <li>
                   <Text
                     id="TextChanger"
-                    to="/aboutme"
+                    // to="/aboutme"
                     className="link"
                     onClick={() => navigate("/aboutme")}
                   >
@@ -49,7 +48,7 @@ export const HeaderbubbleComponent = () => {
                   </Text>
                 </li>
               </ul>
-            </nav>
+            </div>
           </>
         )}
       </HeaderBubble>
@@ -82,7 +81,7 @@ const Text = styled.div`
   }
 `;
 
-const HeaderBubble = styled.div`
+const HeaderBubble = styled.div<{ open: boolean }>`
   height: 50px;
   border-radius: 50px;
   width: ${({ open }) => (open ? 300 : 50)}px;
